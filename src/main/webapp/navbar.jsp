@@ -2,7 +2,7 @@
 <link rel="icon" href="icons/chat.png" type="image/x-icon">
 <link rel="stylesheet" href="styles/navbarStyles.css">
 
-<nav class="topNavbar">
+<nav class="topNavbar" style="position: fixed">
     <div class="navDiv">
         <div class="chatNameClass">
             <a href="/" style="margin-right: 80px"><p class="chatName">ChatApp</p></a>
