@@ -142,6 +142,7 @@ a {
 }
 
 .suggestion-item {
+    display: flex;
     text-decoration: none;
     padding: 10px;
     cursor: pointer;

@@ -158,7 +158,8 @@ public class mySqlDb implements Dao {
                     int id = resultSet.getInt("userId");
                     String email = resultSet.getString("email");
                     boolean isAdmin = resultSet.getBoolean("isAdmin");
-                    User u = new User(id, userName, password, email, isAdmin);
+                    String image =  resultSet.getString("image");
+                    User u = new User(id, userName, password, email, isAdmin, image);
                     u.setHash(password);
                     return u;
                 } else {
@@ -180,7 +181,8 @@ public class mySqlDb implements Dao {
                     String password = resultSet.getString("passwordHash");
                     String email = resultSet.getString("email");
                     boolean isAdmin = resultSet.getBoolean("isAdmin");
-                    User u = new User(userId, userName, password, email, isAdmin);
+                    String image =  resultSet.getString("image");
+                    User u = new User(userId, userName, password, email, isAdmin, image);
                     u.setHash(password);
                     return u;
                 } else {
