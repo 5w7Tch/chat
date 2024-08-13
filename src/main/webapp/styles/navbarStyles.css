@@ -1,0 +1,153 @@
+html, body{
+    all: unset;
+}
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+.chatNameClass {
+    display: block ruby;
+}
+
+
+.chatNameClass a , .chatNameClass p{
+    outline: none;
+    inline-size: 0;
+    text-decoration: none;
+}
+
+.topNavbar {
+    all: unset;
+    display: block;
+    background: #ffd700; /* Yellow */
+    font-family: Calibri, serif;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 50px;
+}
+
+.topNavbar .navDiv {
+    all: unset;
+    display: flex;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.topNavbar .chatName {
+    all: unset;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    color: black;
+}
+
+.topNavbar .userInfoContainer {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.topNavbar .userName {
+    all: unset;
+    font-size: 23px;
+    color: black;
+    margin-right: 10px;
+}
+
+.userInfoContainer .loginBtn {
+    all: unset;
+    background-color: #ffd700; /* Yellow */
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.userInfoContainer .loginBtn a {
+    all: unset;
+    color: #ffd700; /* Yellow */
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.searchForm .searchInput{
+    all: unset;
+    background-color: white;
+    outline: none;
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 9px;
+}
+
+.searchForm .userSearchButton {
+    all: unset;
+    background-color: #ffd700;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.searchForm{
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.userInfoContainer button{
+    all: unset;
+    outline: none;
+    inline-size: 0;
+    text-decoration: none;
+}
+
+.userInfoContainer a{
+    text-decoration: none;
+    outline: none;
+}
+
+
+.suggestions {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    border: none;
+    border-radius: 2px;
+    background-color: #fff;
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+

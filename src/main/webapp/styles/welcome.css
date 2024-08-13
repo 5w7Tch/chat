@@ -1,0 +1,45 @@
+/* styles/theme.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black background */
+    color: #FFD700; /* Yellow text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.welcome-container {
+    text-align: center;
+    background-color: #222; /* Darker black for container */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FFD700; /* Yellow */
+}
+
+.welcome-container p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.enter-button {
+    text-decoration: none;
+    color: #000; /* Black text */
+    background-color: #FFD700; /* Yellow background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.enter-button:hover {
+    background-color: #e6c200; /* Darker yellow on hover */
+}
