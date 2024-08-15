@@ -15,6 +15,7 @@ import java.sql.SQLException;
 
 @WebServlet("/signup")
 public class signup extends HttpServlet {
+    private static final String AVATAR = "https://www.gravatar.com/avatar/?d=mp&s=150&f=y";
     private static final String CHARS = "abcdefghijklmnopqrstuvwxyz0123456789.,-!";
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,7 +55,7 @@ public class signup extends HttpServlet {
                 usernamevalidity = 0;
             }
             if(usernamevalidity == 1 && emailValidity == 1 && passwordValidity == 1){
-                User user = new User(-1,name, password,email,false);
+                User user = new User(-1,name, password,email,false, AVATAR);
                 dao.addUser(user);
                 request.getSession().setAttribute("user",user);
             }

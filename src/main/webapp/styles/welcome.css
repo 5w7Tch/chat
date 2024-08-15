@@ -17,6 +17,9 @@ body {
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-around;
+
 }
 
 .welcome-container h1 {
@@ -42,4 +45,73 @@ body {
 
 .enter-button:hover {
     background-color: #e6c200; /* Darker yellow on hover */
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin-top: 10%;
+}
+
+.user-count {
+    font-size: 24px;
+    margin-right: 10px;
+    color: white;
+}
+
+.line-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.line {
+    height: 40px; /* Adjust height as needed */
+    width: 2px;
+    background-color: #ccc;
+    position: relative;
+    transition: background-color 0.5s;
+}
+
+.line:hover {
+    background-color: white; /* Change to the desired color */
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    font-size: 24px;
+    color: gold;
+    margin-bottom: 5px;
+}
+
+.rating-value {
+    font-size: 18px;
+    margin-top: 5px;
+    color: white;
+}
+
+.features-container {
+    text-align: center;
+    background-color: transparent; /* Darker black for container */
+    padding: 50px;
+    border-radius: 10px;
+    justify-content: space-around;
+    display: flex;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
 }

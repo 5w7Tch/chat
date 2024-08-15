@@ -14,7 +14,8 @@ create table if not exists users(
     firstName nvarchar(50) unique not null,
     email nvarchar(50) not null,
     passwordHash nvarchar(100) not null,
-    isAdmin bool not null default false
+    isAdmin bool not null default false,
+    linkToImage nvarchar(256) default 'https://www.gravatar.com/avatar/?d=mp&s=150&f=y'
 );
 
 create table if not exists friendRequests(
@@ -57,7 +58,7 @@ CREATE TABLE if not exists announcements(
 
 
 
-insert into users values (1,'nika','nika@', '34bff7be484da58a7c244a79ef278630f334a732',  true);
-insert into users values (2,'lasha','lasha@', 'ee5d0f40184e345d01bf17e5a8a8dab7bcf0c4c8',  true);
-insert into users values (3,'zoro','zoro@', '2cdb8c4253053c1e0a8bcba9c9b482aec983bf55',  false);
+insert into users values (1,'nika','nika@', '34bff7be484da58a7c244a79ef278630f334a732',  true, 'https://www.gravatar.com/avatar/?d=mp&s=150&f=y');
+insert into users values (2,'lasha','lasha@', 'ee5d0f40184e345d01bf17e5a8a8dab7bcf0c4c8',  true, 'https://www.gravatar.com/avatar/?d=mp&s=150&f=y');
+insert into users values (3,'zoro','zoro@', '2cdb8c4253053c1e0a8bcba9c9b482aec983bf55',  false,'https://www.gravatar.com/avatar/?d=mp&s=150&f=y');
 

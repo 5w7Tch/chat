@@ -2,19 +2,16 @@
 <link rel="icon" href="icons/chat.png" type="image/x-icon">
 <link rel="stylesheet" href="styles/navbarStyles.css">
 
-<nav class="topNavbar">
+<nav class="topNavbar" style="position: fixed">
     <div class="navDiv">
         <div class="chatNameClass">
             <a href="/" style="margin-right: 80px"><p class="chatName">ChatApp</p></a>
-
             <form action="/searchAccount" method="get" class="searchForm">
-                <input type="text" name="query" placeholder="Search users..." class="searchInput" id="searchInput">
+                <input type="text" name="query" placeholder="Search users..." class="searchInput" id="searchInput" autocomplete="off">
                 <button type="submit" class="userSearchButton">Search</button>
                 <div id="suggestions" class="suggestions"></div>
             </form>
         </div>
-
-
         <div class="userInfoContainer">
             <% if(request.getSession().getAttribute("user")==null) { %>
             <a href="login" class="login"><button class="loginBtn">Log In</button></a>
@@ -28,4 +25,5 @@
         </div>
     </div>
 </nav>
+<script src="scripts/searchActions.js"></script>
 

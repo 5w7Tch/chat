@@ -142,12 +142,18 @@ a {
 }
 
 .suggestion-item {
+    display: flex;
     text-decoration: none;
     padding: 10px;
     cursor: pointer;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px #ffd700;
+    border-radius: 5px;
 }
 
 .suggestion-item:hover {
-    background-color: #f0f0f0;
+    color: white;
+    background-color: #000;
 }
 

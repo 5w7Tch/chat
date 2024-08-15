@@ -1,5 +1,6 @@
 package models.DAO;
 
+import jdk.internal.net.http.common.Pair;
 import models.USER.User;
 
 
@@ -7,6 +8,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -158,7 +160,8 @@ public class mySqlDb implements Dao {
                     int id = resultSet.getInt("userId");
                     String email = resultSet.getString("email");
                     boolean isAdmin = resultSet.getBoolean("isAdmin");
-                    User u = new User(id, userName, password, email, isAdmin);
+                    String image =  resultSet.getString("linkToImage");
+                    User u = new User(id, userName, password, email, isAdmin, image);
                     u.setHash(password);
                     return u;
                 } else {
@@ -180,7 +183,8 @@ public class mySqlDb implements Dao {
                     String password = resultSet.getString("passwordHash");
                     String email = resultSet.getString("email");
                     boolean isAdmin = resultSet.getBoolean("isAdmin");
-                    User u = new User(userId, userName, password, email, isAdmin);
+                    String image =  resultSet.getString("linkToImage");
+                    User u = new User(userId, userName, password, email, isAdmin, image);
                     u.setHash(password);
                     return u;
                 } else {
@@ -475,15 +479,15 @@ public class mySqlDb implements Dao {
 
 
     @Override
-    public List<Integer> searchUserByUsername(String userName) throws SQLException {
-        List<Integer> userIds = new ArrayList<>();
+    public HashMap<String,String> searchUserByUsername(String userName) throws SQLException {
+        HashMap<String,String> userIds = new HashMap<>();
         String sql = "SELECT * FROM users WHERE firstName LIKE ?";
         try (Connection connection = dbSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, "%" + userName + "%");
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                userIds.add(rs.getInt("userId"));
+                userIds.put(rs.getString("firstName"), rs.getString("linkToImage"));
             }
         }
         return userIds;

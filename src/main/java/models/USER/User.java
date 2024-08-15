@@ -6,14 +6,18 @@ public class User {
     private String passwordHash;
     private final String email;
     private final boolean isAdmin;
+    private final String image;
 
-    public User(int id,String username,String password,String email,boolean isAdmin){
+    public User(int id, String username, String password, String email, boolean isAdmin, String image){
         this.id = id;
         this.username = username;
         this.passwordHash = Hasher.getPasswordHash(password);
         this.email = email;
         this.isAdmin = isAdmin;
+        this.image = image;
     }
+
+    public String getImage(){ return image; }
 
     public void setHash(String passwordHash){
         this.passwordHash=passwordHash;
