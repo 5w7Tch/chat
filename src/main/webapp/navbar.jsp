@@ -7,7 +7,7 @@
         <div class="chatNameClass">
             <a href="/" style="margin-right: 80px"><p class="chatName">ChatApp</p></a>
             <form action="/searchAccount" method="get" class="searchForm">
-                <input type="text" name="query" placeholder="Search users..." class="searchInput" id="searchInput">
+                <input type="text" name="query" placeholder="Search users..." class="searchInput" id="searchInput" autocomplete="off">
                 <button type="submit" class="userSearchButton">Search</button>
                 <div id="suggestions" class="suggestions"></div>
             </form>

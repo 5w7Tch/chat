@@ -15,7 +15,7 @@ create table if not exists users(
     email nvarchar(50) not null,
     passwordHash nvarchar(100) not null,
     isAdmin bool not null default false,
-    image nvarchar(256) default 'https://www.gravatar.com/avatar/?d=mp&s=150&f=y'
+    linkToImage nvarchar(256) default 'https://www.gravatar.com/avatar/?d=mp&s=150&f=y'
 );
 
 create table if not exists friendRequests(

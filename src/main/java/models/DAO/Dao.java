@@ -1,11 +1,13 @@
 package models.DAO;
 
+import jdk.internal.net.http.common.Pair;
 import models.USER.User;
 
 
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public interface Dao {
     boolean friendConnectionExists(Integer user1, Integer user2) throws SQLException;
     Integer getUserByName(String userName) throws SQLException;
 
-    List<Integer> searchUserByUsername (String userName) throws SQLException;
+    HashMap<String,String> searchUserByUsername (String userName) throws SQLException;
 //    ArrayList<IAnnouncement> getUserAnnouncements(int userId) throws SQLException;
 //    ArrayList<IFriend> getUserFriends(int userId) throws SQLException;
     boolean promoteUser(Integer user_id) throws SQLException;
