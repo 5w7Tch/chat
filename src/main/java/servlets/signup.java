@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 @WebServlet("/signup")
@@ -58,6 +59,9 @@ public class signup extends HttpServlet {
                 User user = new User(-1,name, password,email,false, AVATAR);
                 dao.addUser(user);
                 request.getSession().setAttribute("user",user);
+                ArrayList<User> online = (ArrayList<User>)request.getServletContext().getAttribute(User.ONLINE);
+                online.add(user);
+                request.getServletContext().setAttribute(User.ONLINE, online);
             }
             response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
             response.setHeader("Pragma", "no-cache");

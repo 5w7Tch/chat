@@ -33,6 +33,11 @@ public class forSearchingAccount extends HttpServlet {
                 response.sendError(404);
                 return;
             }
+            User user = (User)request.getSession().getAttribute("user");
+            if(user != null && user.getId().equals(userId)){
+                request.getRequestDispatcher("/home.jsp").forward(request,response);
+                return;
+            }
             response.sendRedirect("/account?Id=" + userId);
         } catch (SQLException e) {
             response.sendError(500);

@@ -1,0 +1,86 @@
+html, body{
+    all: unset;
+}
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+
+body {
+    display: flex;
+}
+.containerAll{
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+}
+.your-info {
+    width: 28%;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+.posts {
+    width: 40%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    justify-content: space-around;
+    background-color: purple;
+}
+
+.friends {
+    width: 28%;
+    background-color: green;
+}
+
+.rectangle {
+    border-radius: 20px;
+    background-color: red;
+    display: flex;
+    padding: 20px;
+}
+
+.picture {
+    background-color: #ffd700;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    border-style: dashed;
+}
+.info {
+    margin: 10px;
+
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.buttons button {
+    background-color: #FFD700; /* Yellow */
+    color: #000; /* Black text */
+    font-size: 8px;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}

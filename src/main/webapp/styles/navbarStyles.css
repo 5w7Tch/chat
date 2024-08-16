@@ -126,14 +126,12 @@ a {
     outline: none;
 }
 
-
 .suggestions {
     position: absolute;
     top: 110%;
     left: 0;
     right: 0;
-    border: none;
-    border-radius: 2px;
+    border-radius: 10px;
     background-color: #fff;
     z-index: 1000;
     max-height: 150px;
@@ -144,12 +142,11 @@ a {
 .suggestion-item {
     display: flex;
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
     align-items: center;
-    justify-content: space-around;
-    border: 2px #ffd700;
-    border-radius: 5px;
+    border: 4px #ffd700;
+    border-radius: 10px;
 }
 
 .suggestion-item:hover {

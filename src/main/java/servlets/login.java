@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-
+import java.util.ArrayList;
 
 
 @WebServlet("/login")
@@ -37,6 +37,9 @@ public class login extends HttpServlet {
                 User curUser = dao.getUser(username , password);
                 HttpSession session = request.getSession(true);
                 session.setAttribute("user", curUser);
+                ArrayList<User> online = (ArrayList<User>)request.getServletContext().getAttribute(User.ONLINE);
+                online.add(curUser);
+                request.getServletContext().setAttribute(User.ONLINE, online);
                 res = "found";
                 // todo: save cookies;
             }else{

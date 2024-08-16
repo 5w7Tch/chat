@@ -1,6 +1,7 @@
 package models.USER;
 
 public class User {
+    public static final String ONLINE = "online";
     private int id;
     private final String username;
     private String passwordHash;
