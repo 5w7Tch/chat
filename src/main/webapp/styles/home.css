@@ -16,38 +16,50 @@ a {
 
 body {
     display: flex;
+    background-color: black;
 }
 .containerAll{
     display: flex;
     margin-top: 50px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 .your-info {
+    position: fixed;
     width: 28%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: transparent;
+    z-index: 1;
 }
 
 .posts {
-    width: 40%;
-    margin-left: 2.5%;
+    flex-grow: 1; /* Take up remaining space */
+    overflow-y: auto;
+    margin-left: 30.5%;
     margin-right: 2.5%;
+    margin-top: 20px;
     justify-content: space-around;
     background-color: purple;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .friends {
     width: 28%;
-    background-color: green;
+    overflow-y: auto;
+    background-color: black;
+    box-sizing: border-box;
 }
 
 .rectangle {
     border-radius: 20px;
-    background-color: red;
+    background-color: blue;
     display: flex;
     padding: 20px;
+    margin: 20px auto;
+    z-index: 1;
 }
 
 .picture {
@@ -61,7 +73,6 @@ body {
 }
 .info {
     margin: 10px;
-
 }
 
 .buttons {
@@ -83,4 +94,74 @@ body {
     margin-top: 10px;
     cursor: pointer;
     margin-right: 10px;
+}
+
+.friend-list {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 900px;
+    overflow-y: auto;
+
+}
+
+.friend-list button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.friend {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.friend-line {
+    border-bottom: 1px solid #ddd;
+}
+
+.friend:last-child {
+    border-bottom: none;
+}
+
+.profile-picture {
+    position: relative;
+    margin-right: 10px;
+    z-index: 1;
+}
+
+.profile-picture img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.online {
+    background-color: #4caf50; /* Green */
+}
+
+.offline {
+    background-color: grey; /* Gray */
+}
+
+.friend-name {
+    font-size: 16px;
+    color: #333;
 }

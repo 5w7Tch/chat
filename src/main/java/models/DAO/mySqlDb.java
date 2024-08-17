@@ -1,6 +1,5 @@
 package models.DAO;
 
-import jdk.internal.net.http.common.Pair;
 import models.USER.User;
 
 
@@ -10,7 +9,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
 public class mySqlDb implements Dao {
     private final BasicDataSource dbSource;
@@ -195,10 +193,10 @@ public class mySqlDb implements Dao {
     }
 
     @Override
-    public HashSet<Integer> getFriends(Integer userId) throws SQLException {
+    public ArrayList<User> getFriends(Integer userId) throws SQLException {
         String query1 = "SELECT friends.user1Id, friends.user2Id FROM friends  WHERE friends.user1Id = ? or friends.user2Id = ?";
 
-        HashSet<Integer> friends = new HashSet<>();
+        ArrayList<User> friends = new ArrayList<>();
         try (Connection connection = dbSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(query1)) {
             statement.setInt(1, userId);
@@ -208,9 +206,9 @@ public class mySqlDb implements Dao {
                     Integer user1Id = resultSet.getInt("user1Id");
                     Integer user2Id = resultSet.getInt("user2Id");
                     if (user2Id.equals(userId)) {
-                        friends.add(user1Id);
+                        friends.add(getUserById(user1Id));
                     } else if (user1Id.equals(userId)) {
-                        friends.add(user2Id);
+                        friends.add(getUserById(user2Id));
                     }
                 }
             }

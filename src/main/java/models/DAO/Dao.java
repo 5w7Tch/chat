@@ -20,7 +20,7 @@ public interface Dao {
     boolean accountExists(String userName, String passwordHash) throws SQLException;
     User getUser(String userName, String password) throws SQLException;
     User getUserById(Integer id) throws SQLException;
-    HashSet<Integer> getFriends(Integer userId) throws SQLException;
+    ArrayList<User> getFriends(Integer userId) throws SQLException;
 //    ArrayList<INote> getUserNotes(int userId) throws SQLException;
 
 //    ArrayList<IFriendRequest> getUserFriendRequests(int userId) throws SQLException;

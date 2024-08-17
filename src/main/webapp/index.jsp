@@ -20,7 +20,7 @@
             <div class="container2">
                 <div style="display: flex">
                     <div class="user-count"><%=db.getUserCount()%></div>
-                    <div class="rating-value">Happy Customers</div>
+                    <div class="rating-value">Happy Users</div>
                 </div>
                 <div class="line-container">
                     <div class="line"></div>
